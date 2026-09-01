@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="pathmap" viewBox="0 0 1250 1545" xmlns="http://www.w3.org/2000/svg" role="img" font-family="IBM Plex Sans, Arial, sans-serif" aria-label="Генеалогия сабмитов задачи контроля качества (БАД и ЛВ) сверху вниз: от текстовой модели 0.7817 через базовую связку с LoRA Qwen3-VL-2B 0.8762, расширение ключей точного retrieval 0.8792 и правила с dHash 0.8790 к двум зачётным решениям 0.882858 и 0.881965 и приватному результату 0.86793, четвёртое место из 144. Слева отдельная не вошедшая в ствол дорожка раннего бейзлайна и проба метрики v10. Справа замеренные и отклонённые ветви: kNN, веса по family-CV, старый адаптер, энкодерные ветви. Внизу поздние замены визуального бэкбона и таблица потолков.">
+  <rect x="0" y="0" width="1250" height="1545" fill="#ffffff"/>
+  <defs>
+    <marker id="aG" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#0e6e55"/></marker>
+    <marker id="aR" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#a54a2e"/></marker>
+    <marker id="aK" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#5c6960"/></marker>
+    <marker id="aD" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1e2420"/></marker>
+  </defs>
+
+  <text x="600" y="34" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="16" fill="#1e2420">Генеалогия сабмитов · контроль качества (БАД + ЛВ)</text>
+
+  <!-- ================= spine guide ================= -->
+  <line x1="600" y1="56" x2="600" y2="1300" stroke="#d7ddd3" stroke-width="1"/>
+
+  <!-- ================= left dead track: early baseline ================= -->
+  <text x="30" y="30" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="600" letter-spacing="0.03em" font-size="13.5" fill="#5c6960">ДОРОЖКА · РАННИЙ БЕЙЗЛАЙН</text>
+  <text x="30" y="48" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="600" letter-spacing="0.03em" font-size="13.5" fill="#5c6960">В СТВОЛ НЕ ВОШЁЛ</text>
+
+  <rect x="30" y="64" width="250" height="112" rx="8" fill="#eef1ec" stroke="#d3d9ce"/>
+  <text x="155" y="92" text-anchor="middle" font-size="14" font-weight="600" fill="#1e2420">предварительные сборки</text>
+  <text x="155" y="112" text-anchor="middle" font-size="11.5" fill="#5c6960">ecup-quality-submit … 0.726</text>
+  <text x="155" y="129" text-anchor="middle" font-size="11.5" fill="#5c6960">версии 1.1 / 1.4 … 0.49 / 0.48</text>
+  <text x="155" y="160" text-anchor="middle" font-size="16" font-weight="700" fill="#1e2420">0.48 – 0.73</text>
+  <text x="155" y="199" text-anchor="middle" font-size="12" fill="#a54a2e">✕ без LoRA-VLM потолок ≈ 0.73</text>
+
+  <!-- probe diamond -->
+  <polygon points="150,400 270,470 150,540 30,470" fill="#eef1ec" stroke="#5c6960" stroke-dasharray="4,3"/>
+  <text x="150" y="450" text-anchor="middle" font-size="13" font-weight="700" fill="#1e2420">v10 · проба метрики</text>
+  <text x="150" y="468" text-anchor="middle" font-size="11" fill="#5c6960">вся ЛВ = «бан»</text>
+  <text x="150" y="490" text-anchor="middle" font-size="16" font-weight="700" fill="#1e2420">0.4631</text>
+  <text x="150" y="566" text-anchor="middle" font-size="11.5" fill="#5c6960">⇒ F1_БАД 0.926 · F1_ЛВ 0.826</text>
+  <text x="150" y="582" text-anchor="middle" font-size="11.5" fill="#5c6960">весь запас очков — в ЛВ</text>
+  <line x1="270" y1="470" x2="418" y2="498" stroke="#5c6960" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#aK)"/>
+
+  <!-- ================= main spine ================= -->
+  <!-- N1 -->
+  <rect x="420" y="68" width="360" height="116" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.5"/>
+  <text x="600" y="98" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="18" fill="#1e2420">v1 · только текст</text>
+  <text x="600" y="122" text-anchor="middle" font-size="13" fill="#5c6960">TF-IDF + точный retrieval, без VLM</text>
+  <text x="600" y="162" text-anchor="middle" font-size="27" font-weight="700" fill="#1e2420">0.7817</text>
+
+  <line x1="600" y1="184" x2="600" y2="248" stroke="#0e6e55" stroke-width="2.4" marker-end="url(#aG)"/>
+  <text x="614" y="221" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="13" fill="#0e6e55">+0.0945 — единственный скачок выше шума</text>
+
+  <!-- N2 -->
+  <rect x="420" y="250" width="360" height="116" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.5"/>
+  <text x="600" y="280" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="18" fill="#1e2420">v2 · базовая связка</text>
+  <text x="600" y="303" text-anchor="middle" font-size="13" fill="#5c6960">+ LoRA Qwen3-VL-2B поверх текста</text>
+  <text x="600" y="321" text-anchor="middle" font-size="13" fill="#5c6960">текст + VLM + точный retrieval</text>
+  <text x="600" y="356" text-anchor="middle" font-size="27" font-weight="700" fill="#1e2420">0.8762</text>
+
+  <line x1="600" y1="366" x2="600" y2="430" stroke="#0e6e55" stroke-width="2.4" marker-end="url(#aG)"/>
+  <text x="614" y="403" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="13" fill="#0e6e55">+ ключи retrieval  td + nd + w5</text>
+
+  <!-- N3 -->
+  <rect x="420" y="432" width="360" height="116" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.5"/>
+  <text x="600" y="462" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="18" fill="#1e2420">v19–v27 · ключи retrieval</text>
+  <text x="600" y="485" text-anchor="middle" font-size="13" fill="#5c6960">покрытие ЛВ 45% → 72%</text>
+  <text x="600" y="503" text-anchor="middle" font-size="13" fill="#5c6960">4 отправки — предсказания побитово равны</text>
+  <text x="600" y="538" text-anchor="middle" font-size="27" font-weight="700" fill="#1e2420">0.8792</text>
+
+  <line x1="600" y1="548" x2="600" y2="612" stroke="#0e6e55" stroke-width="2.4" marker-end="url(#aG)"/>
+  <text x="614" y="585" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="13" fill="#0e6e55">+ правило «не БАД» + dHash</text>
+
+  <!-- N4 -->
+  <rect x="420" y="614" width="360" height="116" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.5"/>
+  <text x="600" y="644" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="18" fill="#1e2420">v34 · правила + dHash</text>
+  <text x="600" y="667" text-anchor="middle" font-size="13" fill="#5c6960">«не является БАД»: 577 тов., точн. 0.886</text>
+  <text x="600" y="685" text-anchor="middle" font-size="13" fill="#5c6960">симметричный перцептивный dHash 0.958</text>
+  <text x="600" y="720" text-anchor="middle" font-size="27" font-weight="700" fill="#1e2420">0.8790</text>
+
+  <line x1="600" y1="730" x2="600" y2="798" stroke="#0e6e55" stroke-width="2.4" marker-end="url(#aG)"/>
+  <text x="614" y="770" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="13" fill="#0e6e55">+ EVA-02 в визуальный слот · починка весов</text>
+
+  <!-- FINAL 1 -->
+  <rect x="420" y="800" width="360" height="146" rx="10" fill="#f7efd6" stroke="#c79a2e" stroke-width="2.5"/>
+  <text x="600" y="830" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="0.03em" fill="#8a6d1a">v51 · ЗАЧЁТНОЕ РЕШЕНИЕ</text>
+  <text x="600" y="856" text-anchor="middle" font-size="13" fill="#1e2420">текст-4B + EVA-02 в визуальном слоте,</text>
+  <text x="600" y="874" text-anchor="middle" font-size="13" fill="#1e2420">веса ветвей исправлены (fail-closed)</text>
+  <text x="600" y="924" text-anchor="middle" font-size="30" font-weight="700" fill="#8a6d1a">0.882858</text>
+
+  <line x1="600" y1="946" x2="600" y2="978" stroke="#c79a2e" stroke-width="1.8"/>
+
+  <!-- FINAL 2 -->
+  <rect x="420" y="978" width="360" height="146" rx="10" fill="#f7efd6" stroke="#c79a2e" stroke-width="1.6"/>
+  <text x="600" y="1008" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="0.03em" fill="#8a6d1a">v43 · ВТОРОЕ ЗАЧЁТНОЕ</text>
+  <text x="600" y="1034" text-anchor="middle" font-size="13" fill="#1e2420">расширенный семантический роутер ЛВ</text>
+  <text x="600" y="1052" text-anchor="middle" font-size="13" fill="#1e2420">76 товаров, 4 правила «+» и 3 «−», 0 поломок</text>
+  <text x="600" y="1102" text-anchor="middle" font-size="30" font-weight="700" fill="#8a6d1a">0.881965</text>
+
+  <line x1="600" y1="1124" x2="600" y2="1182" stroke="#1e2420" stroke-width="2" marker-end="url(#aD)"/>
+
+  <!-- private banner -->
+  <rect x="420" y="1184" width="360" height="92" rx="10" fill="#1e2420"/>
+  <text x="600" y="1219" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">ПРИВАТ · 0.8679302239</text>
+  <text x="600" y="1247" text-anchor="middle" font-size="12.5" fill="#cfd6cd">4-е место из 144 команд</text>
+  <text x="600" y="1300" text-anchor="middle" font-size="11.5" fill="#5c6960">публично та же конфигурация — вне топ-10 (лидер 0.9569); перестановка на привате крупнее месяца приростов</text>
+
+  <!-- ================= right column: measured & rejected ================= -->
+  <text x="960" y="250" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="600" letter-spacing="0.03em" font-size="13" fill="#5c6960">ЗАМЕРЕНО И ОТКЛОНЕНО</text>
+
+  <line x1="780" y1="490" x2="900" y2="490" stroke="#5c6960" stroke-width="1.2"/>
+  <line x1="900" y1="302" x2="900" y2="697" stroke="#5c6960" stroke-width="1.2"/>
+  <line x1="900" y1="302" x2="956" y2="302" stroke="#5c6960" stroke-width="1.2" marker-end="url(#aK)"/>
+  <line x1="900" y1="378" x2="956" y2="378" stroke="#5c6960" stroke-width="1.2" marker-end="url(#aK)"/>
+  <line x1="900" y1="454" x2="956" y2="454" stroke="#5c6960" stroke-width="1.2" marker-end="url(#aK)"/>
+  <line x1="900" y1="530" x2="956" y2="530" stroke="#5c6960" stroke-width="1.2" marker-end="url(#aK)"/>
+  <line x1="900" y1="606" x2="956" y2="606" stroke="#5c6960" stroke-width="1.2" marker-end="url(#aK)"/>
+  <line x1="900" y1="697" x2="956" y2="697" stroke="#a54a2e" stroke-width="1.2" marker-end="url(#aR)"/>
+
+  <rect x="960" y="270" width="250" height="64" rx="7" fill="#f6e7e0" stroke="#a54a2e"/>
+  <text x="1085" y="292" text-anchor="middle" font-size="14" font-weight="600" fill="#1e2420">kNN-перенос метки</text>
+  <text x="1085" y="309" text-anchor="middle" font-size="11.5" fill="#5c6960">те же товары, мягче дублей</text>
+  <text x="1085" y="328" text-anchor="middle" font-size="17" font-weight="700" fill="#a54a2e">0.8495  −0.027</text>
+
+  <rect x="960" y="346" width="250" height="64" rx="7" fill="#eef1ec" stroke="#d3d9ce"/>
+  <text x="1085" y="368" text-anchor="middle" font-size="14" font-weight="600" fill="#1e2420">чистка меток + веса бленда</text>
+  <text x="1085" y="385" text-anchor="middle" font-size="11.5" fill="#5c6960">пересчёт весов</text>
+  <text x="1085" y="404" text-anchor="middle" font-size="17" font-weight="700" fill="#1e2420">0.841  шум</text>
+
+  <rect x="960" y="422" width="250" height="64" rx="7" fill="#f6e7e0" stroke="#a54a2e"/>
+  <text x="1085" y="444" text-anchor="middle" font-size="14" font-weight="600" fill="#1e2420">веса по family-CV</text>
+  <text x="1085" y="461" text-anchor="middle" font-size="11.5" fill="#5c6960">2 отправки</text>
+  <text x="1085" y="480" text-anchor="middle" font-size="17" font-weight="700" fill="#a54a2e">0.839  2.0σ хуже</text>
+
+  <rect x="960" y="498" width="250" height="64" rx="7" fill="#f6e7e0" stroke="#a54a2e"/>
+  <text x="1085" y="520" text-anchor="middle" font-size="14" font-weight="600" fill="#1e2420">старый адаптер, новые веса</text>
+  <text x="1085" y="537" text-anchor="middle" font-size="11.5" fill="#5c6960">единств. значимо худшая</text>
+  <text x="1085" y="556" text-anchor="middle" font-size="17" font-weight="700" fill="#a54a2e">0.8316  2.4σ</text>
+
+  <rect x="960" y="574" width="250" height="64" rx="7" fill="#eef1ec" stroke="#d3d9ce"/>
+  <text x="1085" y="596" text-anchor="middle" font-size="14" font-weight="600" fill="#1e2420">2-й адаптер БАД, порог 0.45</text>
+  <text x="1085" y="613" text-anchor="middle" font-size="11.5" fill="#5c6960">внутри σ</text>
+  <text x="1085" y="632" text-anchor="middle" font-size="17" font-weight="700" fill="#1e2420">0.8746</text>
+
+  <rect x="960" y="656" width="250" height="82" rx="7" fill="#f6e7e0" stroke="#a54a2e" stroke-dasharray="4,3"/>
+  <text x="1085" y="678" text-anchor="middle" font-size="14" font-weight="600" fill="#1e2420">энкодерные ветви (ModernBERT)</text>
+  <text x="1085" y="695" text-anchor="middle" font-size="11.5" fill="#5c6960">локально — лучшая ветвь;</text>
+  <text x="1085" y="710" text-anchor="middle" font-size="11.5" fill="#5c6960">веса в отправке разъехались</text>
+  <text x="1085" y="731" text-anchor="middle" font-size="15" font-weight="700" fill="#a54a2e">0.7931  −0.086 · невалидно</text>
+
+  <!-- ================= right column: late backbone swaps ================= -->
+  <text x="960" y="1178" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="600" letter-spacing="0.03em" font-size="13" fill="#5c6960">ПОЗДНИЕ ЗАМЕНЫ ВИЗУАЛКИ</text>
+
+  <rect x="960" y="1192" width="250" height="54" rx="7" fill="#eef1ec" stroke="#d3d9ce"/>
+  <text x="1085" y="1213" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">v62 · q35t + EVA-20</text>
+  <text x="1085" y="1234" text-anchor="middle" font-size="15" font-weight="700" fill="#1e2420">0.8488</text>
+
+  <rect x="960" y="1256" width="250" height="54" rx="7" fill="#f6e7e0" stroke="#a54a2e"/>
+  <text x="1085" y="1277" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">v61 · DINOv2 backbone</text>
+  <text x="1085" y="1298" text-anchor="middle" font-size="15" font-weight="700" fill="#a54a2e">0.6439</text>
+
+  <rect x="960" y="1320" width="250" height="54" rx="7" fill="#f6e7e0" stroke="#a54a2e"/>
+  <text x="1085" y="1341" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">v53 / v54 / v49</text>
+  <text x="1085" y="1362" text-anchor="middle" font-size="13" font-weight="700" fill="#a54a2e">non-zero exit · таймаут</text>
+
+  <text x="960" y="1398" font-size="11.5" fill="#a54a2e" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">✕ либо падают, либо ниже EVA-02</text>
+
+  <!-- ================= ceilings panel ================= -->
+  <rect x="300" y="1330" width="600" height="185" rx="10" fill="#f6f8f5" stroke="#d3d9ce"/>
+  <text x="324" y="1362" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#1e2420">Потолки — честная валидация</text>
+  <line x1="320" y1="1378" x2="880" y2="1378" stroke="#e3e8df"/>
+  <text x="324" y="1400" font-size="13" fill="#5c6960">только модель, без retrieval</text>
+  <text x="876" y="1400" text-anchor="end" font-size="13" font-weight="700" fill="#1e2420">macro 0.861</text>
+  <line x1="320" y1="1412" x2="880" y2="1412" stroke="#e3e8df"/>
+  <text x="324" y="1434" font-size="13" fill="#5c6960">+ retrieval при полном покрытии трейна</text>
+  <text x="876" y="1434" text-anchor="end" font-size="13" font-weight="700" fill="#1e2420">0.937</text>
+  <line x1="320" y1="1446" x2="880" y2="1446" stroke="#e3e8df"/>
+  <text x="324" y="1468" font-size="13" fill="#5c6960">+ идеальная модель на непокрытых товарах</text>
+  <text x="876" y="1468" text-anchor="end" font-size="13" font-weight="700" fill="#1e2420">0.990</text>
+  <text x="324" y="1499" font-size="12" fill="#5c6960">для macro 0.95 нужен F1_ЛВ ≈ 0.93 — выше потолка одного retrieval</text>
+</svg>
