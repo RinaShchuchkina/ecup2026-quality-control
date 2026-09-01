@@ -1,0 +1,90 @@
+{
+  "model_candidates": [
+    "Qwen/Qwen3-VL-2B-instruct",
+    "Qwen/Qwen3-VL-2B-Instruct",
+    "Qwen3-VL-2B-instruct",
+    "Qwen3-VL-2B-Instruct"
+  ],
+  "thr": {
+    "БАД": 0.37,
+    "Легковоспламеняющиеся": 0.41
+  },
+  "batch_size": 8,
+  "adapters": [
+    "adapter"
+  ],
+  "vlm_weights": {
+    "БАД": {
+      "adapter": 0.5
+    },
+    "Легковоспламеняющиеся": {
+      "adapter": 0.5
+    }
+  },
+  "adapter_cfg": {
+    "adapter": {
+      "max_imgs": 4,
+      "max_pixels": 262144,
+      "max_len": 3072
+    },
+    "adapter_q35t": {
+      "max_imgs": 0,
+      "max_len": 2048,
+      "max_pixels": 262144,
+      "model_candidates": [
+        "Qwen/Qwen3.5-4B",
+        "Qwen3.5-4B",
+        "Qwen/Qwen3_5-4B"
+      ]
+    },
+    "adapter_e2": {
+      "max_imgs": 5,
+      "max_pixels": 331776,
+      "max_len": 4608
+    }
+  },
+  "lv_router": true,
+  "knn": {
+    "enabled": false,
+    "model_candidates": [
+      "Qwen/Qwen3-VL-Embedding-2B",
+      "Qwen3-VL-Embedding-2B",
+      "Qwen/Qwen3-VL-Embedding-2B-instruct"
+    ],
+    "instruction": "Represent this marketplace product listing (its text and images) for product compliance classification.",
+    "thr": {
+      "Легковоспламеняющиеся": 0.9
+    },
+    "k": 3,
+    "max_pixels": 261120,
+    "batch_size": 8
+  },
+  "exact_retrieval_cats": [
+    "БАД",
+    "Легковоспламеняющиеся"
+  ],
+  "retrieval_keys": {
+    "БАД": [
+      "text_index",
+      "text_index_nd"
+    ],
+    "Легковоспламеняющиеся": [
+      "text_index",
+      "text_index_nd",
+      "text_index_w5"
+    ]
+  },
+  "retrieval_img_cats": [],
+  "dhash_cats": [
+    "Легковоспламеняющиеся"
+  ],
+  "dhash_min_votes": 2,
+  "strict_adapters": true,
+  "dhash_sym_cats": [
+    "БАД"
+  ],
+  "not_bad_rule_cats": [
+    "БАД"
+  ],
+  "weights_dir": "weights"
+}
